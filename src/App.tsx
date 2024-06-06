@@ -1,7 +1,7 @@
-import Header from "./Components/Header";
+
 
 function App(){
-    return <div><Header></Header></div>
+    return <div>Hello</div>
 }
 
 export default App;
