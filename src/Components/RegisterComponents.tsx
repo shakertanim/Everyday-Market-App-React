@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 function RegisterPage() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -9,7 +10,8 @@ function RegisterPage() {
     const [province, setProvince] = useState('');
     const [country, setCountry] = useState('');
     const [termsAccepted, setTermsAccepted] = useState(false);
-    const [formValid, setFormValid] = useState(false);
+    // Removed formValid and setFormValid as they are not used
+
     const navigate = useNavigate();
 
     const validateForm = () => {
@@ -25,7 +27,7 @@ function RegisterPage() {
         return isNameValid && isEmailValid && isPhoneValid && isDobValid && isAddressValid && isProvinceValid && isCountryValid && termsAccepted;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (validateForm()) {
             navigate('/product');
